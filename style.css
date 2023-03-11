@@ -1,0 +1,104 @@
+body {
+  font-family:'Roboto', 'Open Sans',sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a:hover {
+  color: inherit;
+  opacity: 0.7;
+}
+
+a:active {
+  opacity: 1;
+}
+
+.navbar {
+  border-bottom: 2px solid #000000;
+}
+
+.navbar-brand {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.navbar-brand span {
+  color: #ffc107;
+}
+
+.navbar-collapse {
+  justify-content: end;
+}
+
+.nav-link {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.content__companies {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.companies__company {
+  display: block;
+  padding: 15px;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+.companies__company p {
+  margin: 0;
+}
+
+.content__btn-add {
+  display: block;
+  padding: 10px;
+  margin: 30px auto;
+  font-weight: 700;
+  font-size: 18px;
+  background-color: #ffc107;
+  border: none;
+  border-radius: 10px;
+}
+
+.content__btn-add:hover {
+  opacity: 0.7;
+}
+
+.content__btn-add:active {
+  opacity: 1;
+}
+
+.companyCard {
+  position: relative;
+}
+
+.unset {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: -10px;
+  width: 30px;
+  height: 30px;
+  background-image: url('./img/trash.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+  z-index: 10;
+  border: 1px solid #000000;
+  border-radius: 50%;
+}
+
+.unset:hover {
+  background-image: url('./img/trash-gold.svg');
+  opacity: 1;
+}
