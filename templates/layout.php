@@ -34,7 +34,7 @@
             </li>
             <?php else: ?> 
             <li class="nav-item">
-              <a class="nav-link active" href="#">Выйти</a>
+              <a class="nav-link active" href="sign-out.php">Выйти</a>
             </li>
             <?php endif; ?>
           </ul>
@@ -53,14 +53,14 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="https://echo.htmlacademy.ru/">
+          <form action="sign-in.php" method="post">
             <div class="mb-3">
               <label for="signInEmail" class="form-label">Адрес электронной почты</label>
-              <input type="email" class="form-control" id="inpusignInEmailtEmail1" name="email" aria-describedby="emailHelp">
+              <input type="email" class="form-control" id="inpusignInEmailtEmail1" name="email" aria-describedby="emailHelp" required>
             </div>
             <div class="mb-3">
               <label for="signInPassword1" class="form-label">Пароль</label>
-              <input type="password" class="form-control" id="signInPassword1" name="password">
+              <input type="password" class="form-control" id="signInPassword1" name="password" required>
             </div>
             <button type="submit" class="btn btn-primary">Войти</button>
           </form>
@@ -81,11 +81,11 @@
           <form action="https://echo.htmlacademy.ru/">
             <div class="mb-3">
               <label for="signUpEmail1" class="form-label">Адрес электронной почты</label>
-              <input type="email" class="form-control" id="signUpEmail1" name="email" aria-describedby="emailHelp">
+              <input type="email" class="form-control" id="signUpEmail1" name="email" aria-describedby="emailHelp" required>
             </div>
             <div class="mb-3">
               <label for="signUpPassword1" class="form-label">Пароль</label>
-              <input type="password" class="form-control" id="signUpPassword1" name="password">
+              <input type="password" class="form-control" id="signUpPassword1" name="password" required>
             </div>
             <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
           </form>

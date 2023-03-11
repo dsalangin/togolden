@@ -6,7 +6,7 @@
 // Адрес
 // Телефон
 
-$isAuth = true;
+$isAuth = false;
 
 $companies = [
   ['id' => 1, 'name' => 'ООО РОГА И КОПЫТА', 'inn' => '7802930959',
@@ -58,3 +58,21 @@ $companies = [
 
 $infoCategories = ['name' => 'Название', 'inn' => 'ИНН', 'info' => 'Общая информация',
 'ceo' => 'Генеральный директор', 'address' => 'Адрес', 'phoneNumber' => 'Телефон',];
+
+$users = [
+    [
+        'email' => 'a@a.ru',
+        'name' => 'DS',
+        'password' => '$2y$10$FQvFU57HQMEiZy3axfOET.I0DgQwXUef9H1qZvhxSoHH0Xe8GQnPe'
+    ],
+    [
+        'email' => 'kitty_93@li.ru',
+        'name' => 'Леночка',
+        'password' => '$2y$10$bWtSjUhwgggtxrnJ7rxmIe63ABubHQs0AS0hgnOo41IEdMHkYoSVa'
+    ],
+    [
+        'email' => 'warrior07@mail.ru',
+        'name' => 'Руслан',
+        'password' => '$2y$10$2OxpEH7narYpkOT1H5cApezuzh10tZEEQ2axgFOaKW.55LxIJBgWW'
+    ]
+];

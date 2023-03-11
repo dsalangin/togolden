@@ -1,6 +1,8 @@
 <?php
-require_once('src/function.php');
+require_once('src/functions.php');
 require_once('src/mock.php');
+
+$isAuth = isAuth();
 
 $pageContent = getTemplate('templates/main.php', [
   'companies' => $companies,
