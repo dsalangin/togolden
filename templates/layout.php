@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link href="./style.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
   <title><?=$title;?></title>
 </head>
 
@@ -78,7 +78,11 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="https://echo.htmlacademy.ru/">
+          <form action="sign-up.php" method="post">
+          <div class="mb-3">
+              <label for="signUpName" class="form-label">Имя</label>
+              <input type="text" class="form-control" id="signUpName" name="name" required>
+            </div>
             <div class="mb-3">
               <label for="signUpEmail1" class="form-label">Адрес электронной почты</label>
               <input type="email" class="form-control" id="signUpEmail1" name="email" aria-describedby="emailHelp" required>
@@ -97,7 +101,40 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-  <script src="index.js"></script>
+  <?php if($script):?>
+    <!-- <script src='./index.js'></script> -->
+    <script>
+const {log} = console;
+
+let field = null;
+
+const textInput = document.querySelector('#commentInput');
+const sendButton = document.querySelector('#sendComment');
+const commentButtons = document.querySelectorAll('.comment-button');
+
+sendButton.addEventListener('click', () => {
+  const comment = textInput.value;
+
+  fetch('add-comment.php', {
+  method: 'POST',
+  body: JSON.stringify({comment, field}),
+  }).then(d => log(d));
+
+})
+
+commentButtons.forEach(element => {
+  element.addEventListener('click', () => {
+    field = element.dataset.field;
+
+  })
+});
+
+
+
+
+
+    </script>
+  <?php endif;?>
 </body>
 
 </html>

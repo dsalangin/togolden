@@ -1,6 +1,5 @@
 <?php
 require_once('src/functions.php');
-require_once('src/mock.php');
 
 session_start();
 
@@ -19,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
 
 
-	if (!count($errors) and $user = searchUserByEmail($form['email'], $users)) {
+	if (!count($errors) and $user = searchUserByEmail($form['email'])) {
 		if (password_verify($form['password'], $user['password'])) {
 			$_SESSION['user'] = $user;
 		}
@@ -32,8 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 
 	if (count($errors)) {
-
-		//показать ошибки
 		header('Location: ' . $Ref);
 
 	}
