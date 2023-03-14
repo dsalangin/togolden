@@ -10,9 +10,9 @@
 // };
 
 require_once('src/functions.php');
-getComments('16');
+// getComments('16');
 // getCompanies();
-// getCompany(11);
+getCompany(16);
 
 
 

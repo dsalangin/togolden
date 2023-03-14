@@ -1,4 +1,5 @@
 <main class="content mb-5">
+  <?php if($company):?>
   <ul class="company">
     <?php foreach($fields as $field => $name): ?>
     <li class="company__info row gy-3 ">
@@ -56,16 +57,18 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="#" method="post">
+          <form action="add-comment.php" method="post">
             <div class="mb-3">
               <label for="commentInput" class="form-label">Коментарий</label>
               <textarea class="form-control" id="commentInput" name="comment"></textarea>
             </div>
-            <button type="button" class="btn btn-primary" id="sendComment">Отправить</button>
+            <button type="submit" class="btn btn-primary" id="sendComment">Отправить</button>
           </form>
         </div>
       </div>
     </div>
   </div>
-
+  <?php else:?>
+    <h2>Компания не найдена</h2>
+  <?php endif;?>
 </main>

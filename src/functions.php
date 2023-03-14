@@ -1,5 +1,4 @@
 <?php
-require_once('sql-prepare.php');
 
 function getTemplate($path, $data) {
   if (!file_exists($path)) {
@@ -27,7 +26,7 @@ function isAuth() {
 function searchUserByEmail($email) {
   require_once('connect-db.php');
   
-  $sql = 'SELECT `password`, `name`, `email` FROM `users` WHERE `email` = ?';
+  $sql = 'SELECT `password`, `name`, `email`, `id` FROM `users` WHERE `email` = ?';
   $query = $pdo->prepare($sql);
   $query -> execute([$email]);
   $row = $query -> fetch();
@@ -36,6 +35,7 @@ function searchUserByEmail($email) {
     'password' => $row['password'],
     'email' => $row['email'],
     'name' => $row['name'],
+    'id' => $row['id'],
   ];
 };
 

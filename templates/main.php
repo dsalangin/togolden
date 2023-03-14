@@ -8,7 +8,7 @@
       <a class="companies__company" href=<?='company.php?companyId='.$company['id'];?>>
         <h2 class="company__title"><?=$company['name'];?></h2>
         <p class="company__address"><b>Адрес:</b><?=$company['address'];?></p>
-        <p class="company__phone"><b>Телефон:</b><?=$company['phoneNumber'];?></p>
+        <p class="company__phone"><b>Телефон:</b><?=$company['phone_number'];?></p>
         <p class="company__CEO"><b>Генеральный директор:</b><?=$company['ceo'];?></p>
       </a>
     </li>

@@ -101,39 +101,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"></script> 
+
   <?php if($script):?>
-    <!-- <script src='./index.js'></script> -->
-    <script>
-const {log} = console;
-
-let field = null;
-
-const textInput = document.querySelector('#commentInput');
-const sendButton = document.querySelector('#sendComment');
-const commentButtons = document.querySelectorAll('.comment-button');
-
-sendButton.addEventListener('click', () => {
-  const comment = textInput.value;
-
-  fetch('add-comment.php', {
-  method: 'POST',
-  body: JSON.stringify({comment, field}),
-  }).then(d => log(d));
-
-})
-
-commentButtons.forEach(element => {
-  element.addEventListener('click', () => {
-    field = element.dataset.field;
-
-  })
-});
-
-
-
-
-
-    </script>
+    <script src='index.js'></script>
   <?php endif;?>
 </body>
 

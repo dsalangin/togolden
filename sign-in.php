@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 
 	if (count($errors)) {
-		header('Location: ' . $Ref);
+		header('Location: ' . $Ref.'#'.print_r($errors));
 
 	}
 	else {
