@@ -9,7 +9,7 @@
       </div>
       <?php if($isAuth): ?>
       <button class="col-md-3 col-lg-2 btn comment-button" data-field=<?=$field;?> data-bs-toggle="modal" data-bs-target="#commentModal">Коментировать</button>
-      <ul class="comments-block col-12">
+      <ul class='<?='comments-block col-12 comments-block--'.$field?>'>
         <?php foreach($comments as $comment):?>
           <?php if($comment['field'] == $field):?>
         <li class="comment">
@@ -31,7 +31,7 @@
   <div class="row">
   <?php if($isAuth): ?>
     <button class="col-md-4 btn comment-button" data-field='company' data-bs-toggle="modal" data-bs-target="#commentModal">Коментировать компанию</button>
-    <ul class="comments-block col-12">
+    <ul class="comments-block comments-block--company col-12">
     <?php foreach($comments as $comment):?>
       <?php if($comment['field'] == 'company'):?>
         <li class="comment">

@@ -22,6 +22,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav">
+            <?php if($isAuth): ?>
+            <li class="nav-item">
+              <a class="nav-link active invisible" id="notify" href="#" ><img src="./img/notify.svg" alt="notify"></a>
+            </li>
+            <?php endif; ?>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/">Компании</a>
             </li>
@@ -56,7 +61,7 @@
           <form action="sign-in.php" method="post">
             <div class="mb-3">
               <label for="signInEmail" class="form-label">Адрес электронной почты</label>
-              <input type="email" class="form-control" id="inpusignInEmailtEmail1" name="email" aria-describedby="emailHelp" required>
+              <input type="email" class="form-control" id="signInEmail" name="email" aria-describedby="emailHelp" required>
             </div>
             <div class="mb-3">
               <label for="signInPassword1" class="form-label">Пароль</label>
@@ -88,8 +93,8 @@
               <input type="email" class="form-control" id="signUpEmail1" name="email" aria-describedby="emailHelp" required>
             </div>
             <div class="mb-3">
-              <label for="signUpPassword1" class="form-label">Пароль</label>
-              <input type="password" class="form-control" id="signUpPassword1" name="password" required>
+              <label for="signUpPassword" class="form-label">Пароль</label>
+              <input type="password" class="form-control" id="signUpPassword" name="password" required>
             </div>
             <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
           </form>
@@ -101,10 +106,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"></script> 
 
-  <?php if($script):?>
-    <script src='index.js'></script>
+  <script src='js/errors.js'></script>
+  <script src='js/utils.js'></script>
+  <script src='js/ws-connect.js'></script>
+  <script src='js/geting-comment.js'></script>
+
+  <?php if($script && $isAuth):?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"></script> 
+    <script src='js/add-comment.js'></script>
   <?php endif;?>
 </body>
 

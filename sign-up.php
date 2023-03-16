@@ -11,7 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   
   $sql = 'INSERT INTO users (`create_at`, `name`, `email`, `password`) VALUES(NOW(),?, ?, ?)';
   $query = $pdo->prepare($sql);
-  $query -> execute([$name, $email, $password]);
+  $response = $query -> execute([$name, $email, $password]);
+  $error = $response ? '' : '#userExists';
 }
 
-header('Location: /');
+header('Location: /'.$error);

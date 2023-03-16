@@ -69,8 +69,7 @@ function getCompanies() {
 };
 
 function getComments($companyId) {
-  // require_once('connect-db.php');
-  $dsn = 'mysql:host=togolden;port=3306;dbname=togolden';
+  $dsn = 'mysql:host=localhost;port=3306;dbname=togolden';
   $pdo = new PDO($dsn, 'root', '');
 
   $sql = 'SELECT users.name user_name, comments.text, comments.create_at, fields.name field_name FROM `comments`
@@ -100,99 +99,4 @@ function getComments($companyId) {
   }
 
   return $result;
-//   print('<pre>');
-// var_dump($result);
-// print('</pre>');
 }
-
-
-
-// print('<pre>');
-// var_dump($row);
-// print('</pre>');
-
-
-// `comments.text`, `comments.create_at`, `comments.user_id`
-
-
-// SELECT o.OrderID, o.OrderDate, c.CustomerName
-// FROM Customers AS c, Orders AS o
-// WHERE c.CustomerName="Around the Horn" AND c.CustomerID=o.CustomerID;
-
-// $con = mysqli_connect('togolden', 'root', '', 'togolden');
-// mysqli_set_charset($con, 'utf-8');
-
-// if(!$con) {
-//   $error = mysqli_connect_error();
-//   print($error);
-//   print('error conection');
-// }
-
-// var_dump($con);
-// // $sql = 'SELECT `name` `email` `password` FROM users WHERE `email`="' . $email . '"';
-// $sql = "SELECT * FROM users WHERE `email` =" . $email . '"';
-
-// $result = mysqli_query($con, $sql);
-
-// if(!$result) {  
-//   $error = mysqli_error($con);
-//   // print($error);
-//   print('the end');
-// }
-
-// var_dump($result);
-
-
-
-
-
-// function searchUserByEmail($email) {
-  
-  //   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-//   $mysqli = new mysqli('togolden', 'root', '', 'togolden');
-//   $stmt = $mysqli->prepare("SELECT `name` `email` `password` FROM users WHERE email IN (?)");
-//   $stmt->bind_param("s", $email);
-//   $stmt->execute();
-//   $stmt->store_result();
-//   printf("найдено строк: %d.\n", $stmt->num_rows());
-//   // var_dump($row);
-//   die();
-
-//   $con = mysqli_connect('togolden', 'root', '', 'togolden');
-//   // $con = mysqli_connect($db['host'], $db['user'], $db['password'], $db['database']);
-//   mysqli_set_charset($con, 'utf-8');
-
-//   if(!$con) {
-//     $error = mysqli_connect_error();
-//     print($error);
-//   }
-
-//   $sql = "SELECT `name` `email` `password` FROM users WHERE email=?";
-//   // $stmt = db_get_prepare_stmt($con, $sql, [$email]);
-//   $stmt = mysqli_prepare($con, $sql);
-//   mysqli_stmt_bind_param($stmt, 's', $email);
-//   $result = mysqli_stmt_execute($stmt);
-
-//   if(!$result) {  
-//     $result = mysqli_error($con);
-//     return ($error);
-//   }
-
-//   return $result;
-// };
-
-
-// function dbConnect() {
-//   $con = mysqli_connect('togolden', 'root', '', 'togolden');
-//   // $con = mysqli_connect($db['host'], $db['user'], $db['password'], $db['database']);
-//   mysqli_set_charset($con, 'utf-8');
-
-//   $result = $con;
-
-//   if(!$con) {
-//     $result = mysqli_connect_error();
-//     return $result;
-//   }
-
-//   return $result;
-// }

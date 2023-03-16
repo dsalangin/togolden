@@ -12,15 +12,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   
   $sql = 'INSERT INTO comments (`text`, `field_id`, `company_id`, `user_id`) VALUES(?, ?, ?, ?)';
   $query = $pdo->prepare($sql);
-  $query -> execute([$text, $field_id, $company_id, $user_id]);
+  $response = $query -> execute([$text, $field_id, $company_id, $user_id]);
+  
+  $data = [
+    'status' =>  $response ? 'ok' : 'error',
+    'comment' => [
+      'text' => $text,
+      'fieldId' => $field_id,
+      'companyId' => $company_id,
+      'userName' => $_SESSION['user']['name'],
+      'createAt' => date("Y-m-d H:i:s")
+    ]
+  ];
+  header('Content-Type: application/json; charset=utf-8');
+  echo json_encode($data);
 }
-
-
-//htmlspecialchars(); экранизация символов
-//'$id' = (is_numeric('$id')) ? '$id' : ''; для гет
-//
-
-  //composer -package manager
-  //guzzle шлёт запрос на сервер вебсокета
-  //curl
-  //htmlspecialchars

@@ -17,21 +17,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       }
   }
 
-
-	if (!count($errors) and $user = searchUserByEmail($form['email'])) {
+	$user = searchUserByEmail($form['email']);
+	if (!count($errors) and !empty($user['email'])) {
 		if (password_verify($form['password'], $user['password'])) {
 			$_SESSION['user'] = $user;
 		}
 		else {
-			$errors['password'] = 'Неверный пароль';
+			$errors['password'] = 'incorectPassword';
 		}
 	}
 	else {
-		$errors['email'] = 'Такой пользователь не найден';
+		$errors['email'] = 'noUser';
 	}
 
 	if (count($errors)) {
-		header('Location: ' . $Ref.'#'.print_r($errors));
+		header('Location: ' . $Ref.'#'. $errors['email'] . $errors['password']);
 
 	}
 	else {
